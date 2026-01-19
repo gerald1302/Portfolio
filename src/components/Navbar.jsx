@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import img1 from "../assets/image/profilemenu.jpg";
+import img3 from "../assets/image/animeprofil/luffyprofile.jpg";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +44,7 @@ export default function Navbar() {
         {/* Profile */}
         <div className="flex flex-col items-center mt-20 mb-8">
           <img
-            src={img1}
+            src={img3}
             alt="profile"
             className="w-24 h-24 rounded-full border-4 border-white mb-3"
           />

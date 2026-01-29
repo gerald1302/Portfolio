@@ -1,23 +1,53 @@
 import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import img3 from "../assets/image/animeprofil/luffyprofile.jpg";
+import ThemeToggle from "../components/ThemeToggle";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollToSection = (id) => {
+  const offset = 80; // hauteur navbar
+  const element = document.getElementById(id);
+
+  if (element) {
+    const y =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      offset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
+  setIsOpen(false);
+};
+
+
 
   return (
     <>
       {/* Top Navbar */}
-      <nav className="bg-white fixed w-full top-0 z-40 ">
-       <div className="w-full px-4 py-3 flex justify-end items-center">
+      
+      <nav className="bg-white dark:bg-gray-800  bg-white fixed w-full top-0 z-40">
+  <div className="bg-white dark:bg-gray-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 md:h-20">
+    
+    {/* Gauche : ThemeToggle */}
+    <div className="flex items-center">
+      <ThemeToggle />
+    </div>
 
-          <button
-            className="text-gray-800 hover:text-gray-600"
-            onClick={() => setIsOpen(true)}
-          >
-            <Menu size={30} />
-          </button>
-        </div>
-      </nav>
+    {/* Droite : Menu */}
+    <button
+       className="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-300"
+      onClick={() => setIsOpen(true)}
+    >
+      <Menu size={30} />
+    </button>
+
+  </div>
+</nav>
+
 
       {/* Overlay */}
       {isOpen && (
@@ -61,14 +91,38 @@ export default function Navbar() {
 
         {/* Menu */}
         <ul className="space-y-5 text-lg font-medium px-10">
-          <li className="hover:text-blue-300 cursor-pointer">Home</li>
-          <li className="hover:text-blue-300 cursor-pointer">About</li>
-          <li className="hover:text-blue-300 cursor-pointer">Resume</li>
-          <li className="hover:text-blue-300 cursor-pointer">Portfolio</li>
-          <li className="hover:text-blue-300 cursor-pointer">Services</li>
-          <li className="hover:text-blue-300 cursor-pointer">Contact</li>
-        </ul>
+  <li
+    onClick={() => scrollToSection("hero")}
+    className="cursor-pointer hover:text-blue-300"
+  >
+    Home
+  </li>
+
+  <li
+    onClick={() => scrollToSection("about")}
+    className="cursor-pointer hover:text-blue-300"
+  >
+    About
+  </li>
+
+  <li
+    onClick={() => scrollToSection("portfolio")}
+    className="cursor-pointer hover:text-blue-300"
+  >
+    Portfolio
+  </li>
+
+  <li
+    onClick={() => scrollToSection("contact")}
+    className="cursor-pointer hover:text-blue-300"
+  >
+    Contact
+  </li>
+</ul>
+
       </div>
+     
+
     </>
   );
 }

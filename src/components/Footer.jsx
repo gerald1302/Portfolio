@@ -18,7 +18,7 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 mt-6">
-          <a
+          {/* <a
             href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -26,10 +26,10 @@ export default function Footer() {
             className="social-link hover:text-sky-400 hover:border-sky-400"
           >
             <Twitter size={18} />
-          </a>
+          </a> */}
 
           <a
-            href="https://facebook.com/"
+            href="https://web.facebook.com/jean.gerald.50767"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -39,7 +39,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/jean_gerald1302"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -49,7 +49,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com/"
+            href="https://linkedin.com/in/jean-gerald-razafindrabetsy-71365235b"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

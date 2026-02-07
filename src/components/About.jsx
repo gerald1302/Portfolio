@@ -127,7 +127,7 @@ const About = () => {
             <p className="text-gray-600">
               Approfondissement du backend, des API et des bonnes pratiques professionnelles
             </p>
-          </div>
+          </div> 
 
         </div>
 

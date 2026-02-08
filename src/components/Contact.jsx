@@ -13,10 +13,9 @@ export default function Contact() {
     setLoading(true);
     setSuccess("");
     setError("");
-
     const formData = new FormData(formRef.current);
     const email = formData.get("from_email");
-    
+
     // Validation email
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("❌ Veuillez entrer une adresse email valide.");
@@ -24,13 +23,21 @@ export default function Contact() {
       return;
     }
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS keys missing", { serviceId, templateId, publicKey });
+      setError(
+        "❌ Configuration EmailJS manquante. Ajoutez VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID et VITE_EMAILJS_PUBLIC_KEY dans .env.local (voir .env.example)"
+      );
+      setLoading(false);
+      return;
+    }
+
     emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,    
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
+      .sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(
         () => {
           setSuccess("✅ Message envoyé avec succès !");
@@ -40,7 +47,11 @@ export default function Contact() {
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          setError("❌ Une erreur est survenue. Réessayez.");
+          if (error && error.text && error.text.includes("The public key is required")) {
+            setError("❌ Clé publique EmailJS manquante. Vérifiez VITE_EMAILJS_PUBLIC_KEY.");
+          } else {
+            setError("❌ Une erreur est survenue. Réessayez.");
+          }
           setLoading(false);
         }
       );

@@ -29,9 +29,11 @@ export default function Contact() {
 
     if (!serviceId || !templateId || !publicKey) {
       console.error("EmailJS keys missing", { serviceId, templateId, publicKey });
-      setError(
-        "❌ Configuration EmailJS manquante. Ajoutez VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID et VITE_EMAILJS_PUBLIC_KEY dans .env.local (voir .env.example)"
-      );
+      const isProduction = window.location.hostname !== "localhost";
+      const envMessage = isProduction
+        ? "Ajoutez VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID et VITE_EMAILJS_PUBLIC_KEY dans les variables d'environnement Vercel"
+        : "Ajoutez VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID et VITE_EMAILJS_PUBLIC_KEY dans .env.local (voir .env.example)";
+      setError(`❌ Configuration EmailJS manquante. ${envMessage}`);
       setLoading(false);
       return;
     }

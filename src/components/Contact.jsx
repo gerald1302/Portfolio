@@ -14,20 +14,32 @@ export default function Contact() {
     setSuccess("");
     setError("");
 
+    const formData = new FormData(formRef.current);
+    const email = formData.get("from_email");
+    
+    // Validation email
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("❌ Veuillez entrer une adresse email valide.");
+      setLoading(false);
+      return;
+    }
+
     emailjs
       .sendForm(
-        "service_contact",    
-        "template_rxbs2u9",  
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,    
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  
         formRef.current,
-        "r0izi2YXZtWLVUyYW"      
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
           setSuccess("✅ Message envoyé avec succès !");
           formRef.current.reset();
           setLoading(false);
+          setTimeout(() => setSuccess(""), 5000);
         },
-        () => {
+        (error) => {
+          console.error("EmailJS Error:", error);
           setError("❌ Une erreur est survenue. Réessayez.");
           setLoading(false);
         }

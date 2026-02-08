@@ -1,62 +1,7 @@
 import { useState } from "react";
 import { Grid, ArrowUpRight, Expand, Code2, Server } from "lucide-react";
 import React from "react";
-
-// Images (adapte selon tes vrais projets)
-import img1 from "../assets/image/portfolio/portfolio-1.webp.jpg";
-import img2 from "../assets/image/portfolio/portfolio-2.webp.jpg";
-import img3 from "../assets/image/portfolio/portfolio-3.webp.jpg";
-import img4 from "../assets/image/portfolio/portfolio-4.webp.jpg";
-import img5 from "../assets/image/portfolio/portfolio-5.webp.jpg";
-import img6 from "../assets/image/portfolio/portfolio-6.webp.jpg";
-
-/* -------------------- FILTERS -------------------- */
-const filters = [
-  { name: "Tous les projets", value: "all", icon: <Grid size={18} /> },
-  { name: "Frontend", value: "frontend", icon: <Code2 size={18} /> },
-  { name: "Backend", value: "backend", icon: <Server size={18} /> },
-  { name: "Fullstack", value: "fullstack" },
-];
-
-/* -------------------- PROJECTS -------------------- */
-const projects = [
-  {
-    title: "Application de déclaration RNF",
-    category: "fullstack",
-    image: img1,
-    description: "React, Node.js, Express, Prisma, PostgreSQL",
-  },
-  {
-    title: "Dashboard Administrateur",
-    category: "frontend",
-    image: img2,
-    description: "React, TailwindCSS, DataTable",
-  },
-  {
-    title: "API REST de gestion des utilisateurs",
-    category: "backend",
-    image: img3,
-    description: "Node.js, Express, JWT, Prisma",
-  },
-  {
-    title: "Système d’authentification",
-    category: "backend",
-    image: img4,
-    description: "JWT, rôles, permissions",
-  },
-  {
-    title: "Formulaire multi-étapes",
-    category: "frontend",
-    image: img5,
-    description: "React, validation, UX",
-  },
-  {
-    title: "Gestion des avis de paiement",
-    category: "fullstack",
-    image: img6,
-    description: "React + API + Base de données",
-  },
-];
+import { projectsData, filters } from "../data/projectsData.js";
 
 /* -------------------- COMPONENT -------------------- */
 export default function Portfolio() {
@@ -64,8 +9,8 @@ export default function Portfolio() {
 
   const filteredProjects =
     activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      ? projectsData
+      : projectsData.filter((p) => p.category === activeFilter);
 
   return (
     <section id="portfolio" className="bg-gray-50 dark:bg-gray-900 py-24">
@@ -97,7 +42,9 @@ export default function Portfolio() {
                     : "bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:-translate-y-1"
                 }`}
             >
-              {filter.icon}
+              {filter.value === "all" && <Grid size={18} />}
+              {filter.value === "frontend" && <Code2 size={18} />}
+              {filter.value === "backend" && <Server size={18} />}
               {filter.name}
             </li>
           ))}
@@ -105,9 +52,9 @@ export default function Portfolio() {
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div
-              key={index}
+              key={project.id}
               className="group relative rounded-2xl overflow-hidden shadow-lg bg-gray-100"
             >
               {/* Image */}
@@ -136,19 +83,31 @@ export default function Portfolio() {
                   </p>
 
                   <div className="flex gap-4">
-                    <button
-                      title="Aperçu"
-                      className="w-11 h-11 flex items-center justify-center bg-white text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition"
-                    >
-                      <Expand size={20} />
-                    </button>
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Aperçu du projet"
+                        aria-label="Voir le projet en direct"
+                        className="w-11 h-11 flex items-center justify-center bg-white text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition"
+                      >
+                        <Expand size={20} />
+                      </a>
+                    )}
 
-                    <button
-                      title="Voir le code"
-                      className="w-11 h-11 flex items-center justify-center bg-white text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition"
-                    >
-                      <ArrowUpRight size={20} />
-                    </button>
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Code source"
+                        aria-label="Voir le code sur GitHub"
+                        className="w-11 h-11 flex items-center justify-center bg-white text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition"
+                      >
+                        <ArrowUpRight size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import img3 from "../assets/image/animeprofil/luffyprofile.jpg";
-import ThemeToggle from "../components/ThemeToggle";
+import ThemeToggle from "./ThemeToggle.jsx";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
@@ -83,10 +83,33 @@ export default function Navbar() {
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-4 mb-8">
-          <Facebook className="cursor-pointer hover:text-blue-300" />
-          <Instagram className="cursor-pointer hover:text-blue-300" />
-          <Twitter className="cursor-pointer hover:text-blue-300" />
-          <Linkedin className="cursor-pointer hover:text-blue-300" />
+          <a
+            href="https://web.facebook.com/jean.gerald.50767"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="cursor-pointer hover:text-blue-300 transition"
+          >
+            <Facebook size={20} />
+          </a>
+          <a
+            href="https://www.instagram.com/jean_gerald1302"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="cursor-pointer hover:text-blue-300 transition"
+          >
+            <Instagram size={20} />
+          </a>
+          <a
+            href="https://linkedin.com/in/jean-gerald-razafindrabetsy-71365235b"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="cursor-pointer hover:text-blue-300 transition"
+          >
+            <Linkedin size={20} />
+          </a>
         </div>
 
         {/* Menu */}

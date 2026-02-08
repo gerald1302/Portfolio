@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import img2 from "../assets/image/animeprofil/gear5.jpg";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
 import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
 
 

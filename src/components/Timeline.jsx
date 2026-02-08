@@ -1,36 +1,5 @@
 import { Briefcase, GraduationCap } from "lucide-react";
-
-const data = [
-  {
-    year: "2023 - PRESENT",
-    type: "experience",
-    title: "Développeur Web",
-    place: "Osmosis Business Solution",
-    description: "Participant au développement du projet my_inscription",
-  },
-  {
-    year: "2022",
-    type: "experience",
-    title: "Développeur Web",
-    place: "Osmosis Business Solution",
-    description: "Participant au développement du projet stalion_rh",
-  },
-  {
-    year: "2021",
-    type: "education",
-    title: "Licence",
-    place: "Université E-media Madagascar",
-    description:
-      "Obtention du diplôme de licence en informatique et télécommunication (Parcours Génie logiciel)",
-  },
-  {
-    year: "2018",
-    type: "education",
-    title: "Baccalauréat",
-    place: "Lycée Stella Maris Toamasina",
-    description: "Obtention du diplôme BACC série C",
-  },
-];
+import { timelineData } from "../data/timelineData.js";
 
 export default function ExperienceEducation() {
   return (
@@ -46,7 +15,7 @@ export default function ExperienceEducation() {
         {/* Timeline */}
         <div className="relative border-l-2 border-blue-600 pl-10 space-y-12">
 
-          {data.map((item, index) => (
+          {timelineData.map((item, index) => (
             <div key={index} className="relative">
 
               {/* Icon */}

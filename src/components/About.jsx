@@ -1,11 +1,8 @@
 import React from "react";
-// import profileImg from "../assets/profile/profile-square-1.webp";
-// import signatureImg from "../assets/misc/signature-1.webp";
 import profileImg from "../assets/image/animeprofil/luffyprofile.jpg";
 import signatureImg from "../assets/image/signaturemyname.png";
 
 import { Palette, Code2, Camera, Outdent } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 
 const About = () => {
   return (

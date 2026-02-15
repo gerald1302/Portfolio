@@ -22,6 +22,7 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Outils & Méthodes",
+      viewWork: "Voir mes projets",
       downloadCV: "Télécharger mon CV",
     },
     skills: {
@@ -80,6 +81,7 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Tools & Methods",
+      viewWork: "View My Work",
       downloadCV: "Download My CV",
     },
     skills: {

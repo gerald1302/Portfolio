@@ -141,7 +141,7 @@ const About = () => {
               href="#portfolio"
               className="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
             >
-              {t('about.downloadCV')}
+              {t('about.viewWork')}
             </a>
 
             <a

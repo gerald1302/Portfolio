@@ -1,6 +1,8 @@
 import { Code, Code2, Server, Settings, Palette, Cloud, Trophy, GitBranch, Users } from "lucide-react";
 import React from "react";
 import { skillsData, statsData, progressAreas } from "../data/skillsData.js";
+import { useAOS } from "../hooks/useAOS.js";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 // Map icon names to components
 const iconMap = {
@@ -17,6 +19,8 @@ const getIcon = (iconName) => {
   return IconComponent ? <IconComponent /> : null;
 };
 export default function Skills() {
+  useAOS();
+  const { t } = useLanguage();
   return (
     <section id="skills" className="bg-gray-50 dark:bg-gray-900 py-24">
       <div className="bg-white dark:bg-gray-800 shadow rounded-xl max-w-7xl mx-auto px-6">
@@ -25,12 +29,12 @@ export default function Skills() {
         <div className="pb-16">
           <div className="flex items-center gap-3">
             <h2 className="text-4xl font-bold tracking-wide leading-none dark:bg-gray-800">
-              Compétences
+              {t('skills.title')}
             </h2>
             <span className="w-28 h-px bg-blue-600"></span>
           </div>
           <p className="mt-2 text-gray-500 font-medium">
-            Technologies que j’utilise dans mes projets web
+            {t('skills.subtitle')}
           </p>
         </div>
 
@@ -41,6 +45,8 @@ export default function Skills() {
             {skillsData.map((card, index) => (
               <div
                 key={index}
+                data-aos="flip-left"
+                data-aos-delay={`${200 + index * 100}`}
                 className="dark:bg-gray-800 bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-500" />
@@ -80,10 +86,10 @@ export default function Skills() {
           </div>
 
           {/* Right Summary */}
-          <div className=" dark:bg-gray-800 bg-white rounded-2xl p-10 shadow-lg h-fit lg:sticky top-24">
+          <div className=" dark:bg-gray-800 bg-white rounded-2xl p-10 shadow-lg h-fit lg:sticky top-24" data-aos="fade-left" data-aos-delay="200">
 
             <h3 className="text-2xl font-bold  mb-4">
-              Profil technique
+              {t('skills.profile')}
             </h3>
 
             <p className="text-gray-500 leading-relaxed mb-8">

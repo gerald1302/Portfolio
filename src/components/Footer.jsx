@@ -1,6 +1,10 @@
 import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useAOS } from "../hooks/useAOS.js";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 export default function Footer() {
+  useAOS();
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
@@ -8,16 +12,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Copyright */}
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up" data-aos-delay="100">
           <p className="text-sm">
             © {year}{" "}
             <strong className="text-white px-1">Jean Gerald</strong>
-            . Tous droits réservés.
+            . {t('footer.rights')}
           </p>
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center gap-4 mt-6">
+        <div className="flex justify-center gap-4 mt-6" data-aos="fade-up" data-aos-delay="200">
           {/* <a
             href="https://twitter.com/"
             target="_blank"

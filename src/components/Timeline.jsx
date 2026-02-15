@@ -1,14 +1,18 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import { timelineData } from "../data/timelineData.js";
+import { useAOS } from "../hooks/useAOS.js";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 export default function ExperienceEducation() {
+  useAOS();
+  const { t } = useLanguage();
   return (
     <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Title */}
         <h2 className="text-4xl font-bold mb-16">
-          Experience & Education
+          {t('timeline.title')}
           <span className="block w-40 h-[2px] bg-blue-600 mt-3"></span>
         </h2>
 
@@ -16,7 +20,7 @@ export default function ExperienceEducation() {
         <div className="relative border-l-2 border-blue-600 pl-10 space-y-12">
 
           {timelineData.map((item, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative" data-aos="fade-up" data-aos-delay={`${index * 100 + 100}`}>
 
               {/* Icon */}
               <div className="absolute -left-[38px] top-1 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">

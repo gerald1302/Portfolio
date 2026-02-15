@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import img3 from "../assets/image/animeprofil/luffyprofile.jpg";
 import ThemeToggle from "./ThemeToggle.jsx";
+import LanguageSwitcher from "./LanguageSwitcher.jsx";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const scrollToSection = (id) => {
   const offset = 80; // hauteur navbar
@@ -32,9 +35,10 @@ export default function Navbar() {
       <nav className="bg-white dark:bg-gray-800  bg-white fixed w-full top-0 z-40">
   <div className="bg-white dark:bg-gray-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 md:h-20">
     
-    {/* Gauche : ThemeToggle */}
-    <div className="flex items-center">
+    {/* Gauche : ThemeToggle + LanguageSwitcher */}
+    <div className="flex items-center gap-3">
       <ThemeToggle />
+      <LanguageSwitcher />
     </div>
 
     {/* Droite : Menu */}
@@ -118,28 +122,28 @@ export default function Navbar() {
     onClick={() => scrollToSection("hero")}
     className="cursor-pointer hover:text-blue-300"
   >
-    Home
+    {t('nav.home')}
   </li>
 
   <li
     onClick={() => scrollToSection("about")}
     className="cursor-pointer hover:text-blue-300"
   >
-    About
+    {t('nav.about')}
   </li>
 
   <li
     onClick={() => scrollToSection("portfolio")}
     className="cursor-pointer hover:text-blue-300"
   >
-    Portfolio
+    {t('nav.portfolio')}
   </li>
 
   <li
     onClick={() => scrollToSection("contact")}
     className="cursor-pointer hover:text-blue-300"
   >
-    Contact
+    {t('nav.contact')}
   </li>
 </ul>
 

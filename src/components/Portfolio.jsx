@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Grid, ArrowUpRight, Expand, Code2, Server } from "lucide-react";
 import React from "react";
 import { projectsData, filters } from "../data/projectsData.js";
+import { useAOS } from "../hooks/useAOS.js";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 /* -------------------- COMPONENT -------------------- */
 export default function Portfolio() {
+  useAOS();
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filteredProjects =
@@ -20,18 +24,25 @@ export default function Portfolio() {
         <div className="pb-16">
           <div className="flex items-center gap-3">
             <h2 className="text-4xl font-bold tracking-wide leading-none ">
-              Projets
+              {t('portfolio.title')}
             </h2>
             <span className="w-28 h-px bg-blue-600"></span>
           </div>
           <p className="mt-2 text-gray-500 font-medium">
-            Une sélection de projets réalisés et en cours de développement
+            {t('portfolio.subtitle')}
           </p>
         </div>
 
         {/* Filters */}
-        <ul className="flex flex-wrap justify-center gap-4 mb-14">
-          {filters.map((filter) => (
+        <ul className="flex flex-wrap justify-center gap-4 mb-14" data-aos="fade-up" data-aos-delay="100">
+          {filters.map((filter) => {
+            const filterNameMap = {
+              all: t('portfolio.all'),
+              frontend: t('portfolio.frontend'),
+              backend: t('portfolio.backend'),
+              fullstack: t('portfolio.fullstack')
+            };
+            return (
             <li
               key={filter.value}
               onClick={() => setActiveFilter(filter.value)}
@@ -45,16 +56,19 @@ export default function Portfolio() {
               {filter.value === "all" && <Grid size={18} />}
               {filter.value === "frontend" && <Code2 size={18} />}
               {filter.value === "backend" && <Server size={18} />}
-              {filter.name}
+              {filterNameMap[filter.value] || filter.name}
             </li>
-          ))}
+            );
+          })}
         </ul>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="200">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
+              data-aos="zoom-in"
+              data-aos-delay="300"
               className="group relative rounded-2xl overflow-hidden shadow-lg bg-gray-100"
             >
               {/* Image */}

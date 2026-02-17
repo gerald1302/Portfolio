@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
+  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden;
+}
+
+/* ensure sections that use absolute positioning don’t accidentally push the layout wider */
+section {
+  @apply overflow-x-hidden;
 }
 .social-link {
   @apply w-10 h-10 flex items-center justify-center rounded-full

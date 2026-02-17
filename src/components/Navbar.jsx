@@ -32,13 +32,16 @@ export default function Navbar() {
     <>
       {/* Top Navbar */}
       
-      <nav className="bg-white dark:bg-gray-800  bg-white fixed w-full top-0 z-40">
+      {/* no AOS animation on the header – elements without a data-aos attribute are ignored, but we can be explicit */}
+      <nav data-aos="none" className="bg-white dark:bg-gray-800  bg-white fixed w-full top-0 z-40">
   <div className="bg-white dark:bg-gray-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 md:h-20">
     
-    {/* Gauche : ThemeToggle + LanguageSwitcher */}
-    <div className="flex items-center gap-3">
+    {/* Gauche : ThemeToggle + LanguageSwitcher (language switcher hidden on mobile) */}
+    <div className="flex items-center space-x-2">
       <ThemeToggle />
-      <LanguageSwitcher />
+      <div className="hidden sm:block">
+        <LanguageSwitcher />
+      </div>
     </div>
 
     {/* Droite : Menu */}
@@ -144,6 +147,11 @@ export default function Navbar() {
     className="cursor-pointer hover:text-blue-300"
   >
     {t('nav.contact')}
+  </li>
+
+  {/* on mobile, show language toggle inside sidebar so it doesn’t push the hamburger icon */}
+  <li className="mt-6 border-t pt-4 flex justify-center">
+    <LanguageSwitcher />
   </li>
 </ul>
 

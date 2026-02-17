@@ -10,7 +10,7 @@ import Timeline from '../components/Timeline.jsx'
 const Home = () => {
   return (
     <>
-    
+       <div className="h-16 md:h-20"></div>
     <Hero/>
     <About/>
     <Timeline/>

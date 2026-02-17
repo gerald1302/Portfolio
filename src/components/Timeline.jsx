@@ -6,6 +6,21 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 export default function ExperienceEducation() {
   useAOS();
   const { t } = useLanguage();
+
+  // Map project data with translations
+  const getTranslatedText = (key, property) => {
+    return t(`projects.${key}.${property}`);
+  };
+
+  // Map timeline data index to translation key
+  const timelineTranslations = [
+    "master",
+    "tresor",
+    "eniProducts",
+    "licence",
+    "wordLogistics",
+    "eniSpares",
+  ];
   return (
     <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
@@ -19,7 +34,13 @@ export default function ExperienceEducation() {
         {/* Timeline */}
         <div className="relative border-l-2 border-blue-600 pl-10 space-y-12">
 
-          {timelineData.map((item, index) => (
+          {timelineData.map((item, index) => {
+            const translationKey = timelineTranslations[index];
+            const translatedTitle = translationKey ? t(`projects.${translationKey}.title`) : item.title;
+            const translatedPlace = translationKey ? t(`projects.${translationKey}.place`) : item.place;
+            const translatedDescription = translationKey ? t(`projects.${translationKey}.description`) : item.description;
+
+            return (
             <div key={index} className="relative" data-aos="fade-up" data-aos-delay={`${index * 100 + 100}`}>
 
               {/* Icon */}
@@ -38,20 +59,21 @@ export default function ExperienceEducation() {
                 </span>
 
                 <h3 className="text-xl font-bold mt-2">
-                  {item.title}
+                  {translatedTitle}
                 </h3>
 
                 <p className="text-gray-500 font-medium">
-                  {item.place}
+                  {translatedPlace}
                 </p>
 
                 <p className="mt-4 text-gray-600 dark:text-gray-300">
-                  {item.description}
+                  {translatedDescription}
                 </p>
               </div>
 
             </div>
-          ))}
+            );
+          })}
 
         </div>
       </div>

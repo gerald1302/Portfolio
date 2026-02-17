@@ -47,7 +47,7 @@ const About = () => {
             className="max-w-[200px] mx-auto mb-4 opacity-80"
           />
           <p className="italic  max-w-xs mx-auto">
-            Transformer des idées en solutions digitales fiables et performantes.
+            {t('about.tagline')}
           </p>
         </div>
       </div>
@@ -74,7 +74,7 @@ const About = () => {
             </div>
             <h4 className="font-semibold text-lg mb-2">{t('about.frontend')}</h4>
             <p className="text-gray-500 text-sm">
-              React.js, TailwindCSS, Material UI, interfaces modernes et responsives
+              {t('about.frontendDesc')}
             </p>
           </div>
 
@@ -84,7 +84,7 @@ const About = () => {
             </div>
             <h4 className="font-semibold text-lg mb-2">{t('about.backend')}</h4>
             <p className="text-gray-500 text-sm">
-              Node.js, Express, Prisma, API REST, authentification et sécurité
+              {t('about.backendDesc')}
             </p>
           </div>
 
@@ -94,7 +94,7 @@ const About = () => {
             </div>
             <h4 className="font-semibold text-lg mb-2">{t('about.tools')}</h4>
             <p className="text-gray-500 text-sm">
-              Git & GitHub, travail en local, structuration propre des projets
+              {t('about.toolsDesc')}
             </p>
           </div>
 
@@ -106,21 +106,21 @@ const About = () => {
           <div className="dark:bg-gray-800 flex flex-col sm:flex-row gap-4 bg-gray-50 p-5 rounded-lg border-l-4 border-blue-600" data-aos="fade-up" data-aos-delay="400">
             <span className="font-bold text-blue-600 text-lg w-20">2023</span>
             <p className="text-gray-600">
-              Début de projets web personnels avec React et Node.js
+              {t('about.timeline2023')}
             </p>
           </div>
 
           <div className="dark:bg-gray-800 flex flex-col sm:flex-row gap-4 bg-gray-50 p-5 rounded-lg border-l-4 border-blue-600" data-aos="fade-up" data-aos-delay="450">
             <span className="font-bold text-blue-600 text-lg w-20">2024</span>
             <p className="text-gray-600">
-              Développement d'une application complète de déclaration de recettes non fiscales
+              {t('about.timeline2024')}
             </p>
           </div>
 
           <div className="dark:bg-gray-800 flex flex-col sm:flex-row gap-4 bg-gray-50 p-5 rounded-lg border-l-4 border-blue-600" data-aos="fade-up" data-aos-delay="500">
             <span className="font-bold text-blue-600 text-lg w-20">2025</span>
             <p className="text-gray-600">
-              Approfondissement du backend, des API et des bonnes pratiques professionnelles
+              {t('about.timeline2025')}
             </p>
           </div> 
 
@@ -132,7 +132,7 @@ const About = () => {
           <div className="dark:bg-gray-800 inline-flex items-center gap-3 bg-blue-50 border border-blue-100 rounded-full px-6 py-3 mb-8">
             <span className="text-xl">💻</span>
             <span className=" font-medium">
-              Développeur web motivé, orienté solutions concrètes
+              {t('about.motivation')}
             </span>
           </div>
 

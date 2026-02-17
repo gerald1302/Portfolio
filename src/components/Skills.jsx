@@ -93,9 +93,7 @@ export default function Skills() {
             </h3>
 
             <p className="text-gray-500 leading-relaxed mb-8">
-              Développeur web orienté projets concrets, avec une bonne maîtrise
-              du frontend et une solide base backend. J’accorde une grande
-              importance à la qualité du code et à la logique métier.
+              {t('skillsProfile')}
             </p>
 
             <div className="space-y-6 mb-10">

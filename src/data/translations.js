@@ -24,6 +24,14 @@ export const translations = {
       tools: "Outils & Méthodes",
       viewWork: "Voir mes projets",
       downloadCV: "Télécharger mon CV",
+      tagline: "Transformer des idées en solutions digitales fiables et performantes.",
+      frontendDesc: "React.js, TailwindCSS, Material UI, interfaces modernes et responsives",
+      backendDesc: "Node.js, Express, Prisma, API REST, authentification et sécurité",
+      toolsDesc: "Git & GitHub, travail en local, structuration propre des projets",
+      timeline2023: "Début de projets web personnels avec React et Node.js",
+      timeline2024: "Développement d'une application complète de déclaration de recettes non fiscales",
+      timeline2025: "Approfondissement du backend, des API et des bonnes pratiques professionnelles",
+      motivation: "Développeur web motivé, orienté solutions concrètes",
     },
     skills: {
       title: "Compétences",
@@ -57,6 +65,39 @@ export const translations = {
     timeline: {
       title: "Expérience & Formation",
     },
+    projects: {
+      tresor: {
+        title: "TRESOR PUBLIC",
+        place: "Application de déclaration des recettes non fiscales",
+        description: "Développement d'une solution pour la gestion et la déclaration des revenus publics. Technologies: ReactJS, Node.js, PostgreSQL",
+      },
+      eniProducts: {
+        title: "Gestion des Produits",
+        place: "PROJET DE RÉALISATION À L'ENI",
+        description: "Conception d'une interface mobile performante pour le suivi des stocks. Technologies: React Native, Node.js, MySQL",
+      },
+      wordLogistics: {
+        title: "Application de Gestion Logistique",
+        place: "SOCIÉTÉ WORD",
+        description: "Réalisation d'une solution commerciale pour optimiser les flux logistiques. Technologies: ReactJS, Node.js, MySQL",
+      },
+      eniSpares: {
+        title: "Gestion des pièces de rechange",
+        place: "PROJET DE RÉALISATION À L'ENI",
+        description: "Conception d'un système de commande et d'inventaire. Technologies: ReactJS, Java, MySQL",
+      },
+      master: {
+        title: "Master Professionnel",
+        place: "ENI École Nationale d'Informatique",
+        description: "Poursuite de formation en informatique professionnelle",
+      },
+      licence: {
+        title: "Licence Professionnelle (L1, L2, L3)",
+        place: "ENI École Nationale d'Informatique",
+        description: "Formation complète en développement informatique et conception d'applications",
+      },
+    },
+    skillsProfile: "Développeur web orienté projets concrets, avec une bonne maîtrise du frontend et une solide base backend. J'accorde une grande importance à la qualité du code et à la logique métier.",
   },
   en: {
     nav: {
@@ -83,6 +124,14 @@ export const translations = {
       tools: "Tools & Methods",
       viewWork: "View My Work",
       downloadCV: "Download My CV",
+      tagline: "Transform ideas into reliable and high-performance digital solutions.",
+      frontendDesc: "React.js, TailwindCSS, Material UI, modern and responsive interfaces",
+      backendDesc: "Node.js, Express, Prisma, API REST, authentication and security",
+      toolsDesc: "Git & GitHub, local development, proper project structure",
+      timeline2023: "Start of personal web projects with React and Node.js",
+      timeline2024: "Development of a complete non-fiscal revenue declaration application",
+      timeline2025: "In-depth backend, APIs and professional best practices",
+      motivation: "Motivated web developer, focused on concrete solutions",
     },
     skills: {
       title: "Skills",
@@ -116,5 +165,38 @@ export const translations = {
     timeline: {
       title: "Experience & Education",
     },
+    projects: {
+      tresor: {
+        title: "TRESOR PUBLIC",
+        place: "Public Revenue Declaration Application",
+        description: "Development of a solution for managing and declaring public revenues. Technologies: ReactJS, Node.js, PostgreSQL",
+      },
+      eniProducts: {
+        title: "Product Management",
+        place: "ENI REALIZATION PROJECT",
+        description: "Design of a high-performance mobile interface for stock tracking. Technologies: React Native, Node.js, MySQL",
+      },
+      wordLogistics: {
+        title: "Logistics Management Application",
+        place: "WORD COMPANY",
+        description: "Implementation of a business solution to optimize logistics flows. Technologies: ReactJS, Node.js, MySQL",
+      },
+      eniSpares: {
+        title: "Spare Parts Management",
+        place: "ENI REALIZATION PROJECT",
+        description: "Design of an order and inventory system. Technologies: ReactJS, Java, MySQL",
+      },
+      master: {
+        title: "Professional Master's Degree",
+        place: "ENI National School of Computer Science",
+        description: "Pursuit of professional training in computer science",
+      },
+      licence: {
+        title: "Professional Bachelor's Degree (L1, L2, L3)",
+        place: "ENI National School of Computer Science",
+        description: "Comprehensive training in computer science development and application design",
+      },
+    },
+    skillsProfile: "Web developer focused on concrete projects, with good expertise in frontend and solid backend fundamentals. I place great importance on code quality and business logic.",
   },
 };

@@ -28,9 +28,9 @@ export const translations = {
       frontendDesc: "React.js, TailwindCSS, Material UI, interfaces modernes et responsives",
       backendDesc: "Node.js, Express, Prisma, API REST, authentification et sécurité",
       toolsDesc: "Git & GitHub, travail en local, structuration propre des projets",
-      timeline2023: "Début de projets web personnels avec React et Node.js",
-      timeline2024: "Développement d'une application complète de déclaration de recettes non fiscales",
-      timeline2025: "Approfondissement du backend, des API et des bonnes pratiques professionnelles",
+      // timeline2023: "Début de projets web personnels avec React et Node.js",
+      // timeline2024: "Développement d'une application complète de déclaration de recettes non fiscales",
+      // timeline2025: "Approfondissement du backend, des API et des bonnes pratiques professionnelles",
       motivation: "Développeur web motivé, orienté solutions concrètes",
     },
     skills: {

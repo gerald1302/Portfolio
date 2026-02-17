@@ -101,7 +101,7 @@ const About = () => {
         </div>
 
         {/* Timeline */}
-        <div className="space-y-6 mb-12">
+        {/* <div className="space-y-6 mb-12">
 
           <div className="dark:bg-gray-800 flex flex-col sm:flex-row gap-4 bg-gray-50 p-5 rounded-lg border-l-4 border-blue-600" data-aos="fade-up" data-aos-delay="400">
             <span className="font-bold text-blue-600 text-lg w-20">2023</span>
@@ -124,7 +124,7 @@ const About = () => {
             </p>
           </div> 
 
-        </div>
+        </div> */}
 
         {/* CTA */}
         <div className="text-center lg:text-left">

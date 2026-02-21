@@ -5,10 +5,12 @@ import signatureImg from "../assets/image/signaturemyname.png";
 import { Palette, Code2, Camera, Outdent } from "lucide-react";
 import { useAOS } from "../hooks/useAOS.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
+import { useDownloadCV } from "../hooks/useDownloadCV.js";
 
 const About = () => {
   useAOS();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const { generateCV } = useDownloadCV(language);
   return (
     <section id="about" className="bg-gray-50 dark:bg-gray-900 py-24 bg-white ">
   <div className="bg-white dark:bg-gray-800 shadow rounded-xl max-w-7xl mx-auto px-6">
@@ -144,12 +146,12 @@ const About = () => {
               {t('about.viewWork')}
             </a>
 
-            <a
-              href="#"
+            <button
+              onClick={generateCV}
               className="px-8 py-3 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition"
             >
               {t('about.downloadCV')}
-            </a>
+            </button>
           </div>
 
         </div>
@@ -158,8 +160,6 @@ const About = () => {
     </div>
   </div>
 </section>
-
-    
   );
 };
 

@@ -1,8 +1,8 @@
 import img1 from "../assets/image/portfolio/portfolio-1.webp.jpg";
-import img2 from "../assets/image/portfolio/portfolio-2.webp.jpg";
+import img2 from "../assets/image/portfolio/portfolio.jpeg";
 import img3 from "../assets/image/portfolio/portfolio-3.webp.jpg";
 import img4 from "../assets/image/portfolio/portfolio-4.webp.jpg";
-import img5 from "../assets/image/portfolio/portfolio-5.webp.jpg";
+import img5 from "../assets/image/portfolio/Food.jpeg";
 import img6 from "../assets/image/portfolio/portfolio-6.webp.jpg";
 
 export const projectsData = [

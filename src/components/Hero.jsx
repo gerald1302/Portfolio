@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import img2 from "../assets/image/animeprofil/gear5.jpg";
+import img2 from "../assets/image/animeprofil/1459H-F.jpg";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
 import { useAOS } from "../hooks/useAOS.js";
@@ -149,7 +149,7 @@ const Hero = () => {
               <img
                 src={img2}
                 alt="Hero"
-                className="relative z-10 rounded-2xl shadow-2xl"
+                className="relative z-5 rounded-2xl shadow-2xl object-cover object-center w-full h-auto"
               />
 
              {/* Floating cards (au-dessus de l’image) */}

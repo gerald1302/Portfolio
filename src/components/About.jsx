@@ -1,5 +1,5 @@
 import React from "react";
-import profileImg from "../assets/image/animeprofil/luffyprofile.jpg";
+import profileImg from "../assets/image/animeprofil/1459H-F.jpg";
 import signatureImg from "../assets/image/signaturemyname.png";
 
 import { Palette, Code2, Camera, Outdent } from "lucide-react";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import img3 from "../assets/image/animeprofil/luffyprofile.jpg";
+import img3 from "../assets/image/animeprofil/1459H-F.jpg";
 import ThemeToggle from "./ThemeToggle.jsx";
 import LanguageSwitcher from "./LanguageSwitcher.jsx";
 import { Link } from "react-router-dom";

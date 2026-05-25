@@ -65,7 +65,7 @@ export default function Footer() {
 
         {/* Credits */}
         <div className="text-center text-xs mt-6">
-          Conçu avec ❤️ par{" "}
+          Conçu avec  par{" "}
           <span className="text-white font-medium">Jean Gerald</span>
         </div>
       </div>
